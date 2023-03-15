@@ -73,13 +73,17 @@
 <header>
   <nav class="navbar  navbar-fixed-top navbar-inverse">
     <div class="container">
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
+        <a class="navbar-brand" href="#">
+          <img src="./assets/logom2.png" alt="Neural Defense Technologies Logo" style="height: 130px; position: absolute; top: 0px; left: 10px;">
+        </a>
+      </div>
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav ">
           <li><a href="./index.html" title="">01 : Home</a></li>
@@ -88,20 +92,20 @@
           <li><a href="./contact.html" title="">04 : Contact</a></li>
           <li><a href="./components.html" title="">05 : Components</a></li>
         </ul>
-
-
       </div> 
     </div>
   </nav>
 </header>
+
+
 <!-- Add your site or app content here -->
-<div id="hero-slider" class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/denizatis.jpg')">
+<div id="hero-slider" class="hero-full-container background-image-container white-text-container">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
         <div class="hero-full-wrapper">
           <div class="text-content">
-            <h1><img src="assets/images/logom.png" width="150px" height="150px"><br>
+            <h1>
               <span id="typed-strings">
                 <span></span>
                 <span></span>
@@ -114,6 +118,7 @@
       </div>
     </div>
   </div>
+  <video id="hero-video" src="./assets/images/video.mp4" autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"></video>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -121,6 +126,7 @@
   var images = ['./assets/images/denizatis.jpg', './assets/images/KORAL2.jpg', './assets/images/uzay.jpg'];
   var currentImageIndex = 0;
   var heroSlider = document.getElementById('hero-slider');
+  var heroVideo = document.getElementById('hero-video');
   var typed = new Typed('#typed', {
     strings: ['GELECEĞİNE GÜÇ KAT', 'Neural Defense Technologies'],
     typeSpeed: 80,
@@ -129,11 +135,11 @@
   });
 
   heroSlider.addEventListener('click', function(event) {
-    if (event.clientX < window.innerWidth / 2) {
-      currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
-    } else {
-      currentImageIndex = (currentImageIndex + 1) % images.length;
+    if (heroVideo) {
+      heroVideo.parentNode.removeChild(heroVideo);
+      heroVideo = null;
     }
+    currentImageIndex = (currentImageIndex + 1) % images.length;
     heroSlider.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
 
     switch(currentImageIndex) {
@@ -157,6 +163,7 @@
      movingBackgroundImage();
   });
 </script>
+
 
 
 
