@@ -143,7 +143,7 @@ window.addEventListener('load', function() {
   heroVideo.play();
 });
 
-  var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg'];
+  var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/Ai.jpg'];
   var currentImageIndex = 0;
   var heroSlider = document.getElementById('hero-slider');
   var heroVideo = document.getElementById('hero-video');
@@ -174,9 +174,12 @@ window.addEventListener('load', function() {
         break;
       case 3:
         typed.strings = ['Sürü Drone Sistemleri'];
+        break;
+      case 4:
+        typed.strings = ['Hava Sistemleri'];
         break;  
       default:
-        typed.strings = ['Hava Sistemleri'];
+        typed.strings = ['Ai Sistemleri'];
     }
 
     typed.reset(); // önceki animasyonu sıfırla
