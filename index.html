@@ -203,7 +203,7 @@ const photos = [
   }
 
 
-  var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/ai.jpg'];
+  var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/ai.jpg', './assets/images/enerji.jpg'];
   var currentImageIndex = 0;
   var heroSlider = document.getElementById('hero-slider');
   var heroVideo = document.getElementById('hero-video');
@@ -238,8 +238,11 @@ const photos = [
       case 4:
         typed.strings = ['Hava Sistemleri'];
         break;  
-      default:
+      case 5:
         typed.strings = ['AI Sistemleri'];
+        break;
+      default:
+        typed.strings = ['Enerji Sistemleri'];
     }
 
     typed.reset(); // önceki animasyonu sıfırla
