@@ -135,6 +135,27 @@ window.addEventListener('load', function() {
   heroVideo.play();
 });
 
+var video = document.getElementById('hero-video');
+var overlayText = document.createElement('div');
+overlayText.innerHTML = 'GELECEK PEŞİMİZDEN GELECEK';
+overlayText.style.position = 'absolute';
+overlayText.style.bottom = '20px';
+overlayText.style.left = '50%';
+overlayText.style.top = '50%';
+overlayText.style.transform = 'translateX(-50%)';
+overlayText.style.fontSize = '24px';
+overlayText.style.color = '#fff';
+video.parentNode.appendChild(overlayText);
+
+video.addEventListener('play', function() {
+  overlayText.style.display = 'block';
+});
+
+video.addEventListener('pause', function() {
+  overlayText.style.display = 'none';
+});
+
+
   var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/Ai.jpg'];
   var currentImageIndex = 0;
   var heroSlider = document.getElementById('hero-slider');
