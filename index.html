@@ -22,16 +22,6 @@
 
 <style>
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 20px solid #fff; /* değiştirmek istediğiniz arka plan rengini burada belirtebilirsiniz */
-  cursor: pointer;
-  margin-left: 5px; /* ok ile metin arasındaki boşluğu ayarlamak için */
-}
-
   .background-image-container {
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,7 +112,9 @@
               </span>
               <span id="typed"></span>
             </h1>
-            <div class="arrow-right"></div>
+            <h3>
+              <div id="devam-et-div">Devam Et</div>
+            </h3>
           </div>
         </div>
       </div>
@@ -192,9 +184,17 @@ window.addEventListener('load', function() {
      movingBackgroundImage();
   });
 </script>
+<script>
+var devamEtDiv = document.getElementById("devam-et-div");
 
+devamEtDiv.addEventListener("mouseover", function() {
+devamEtDiv.style.cursor = "pointer";
+});
 
-
+devamEtDiv.addEventListener("mouseout", function() {
+devamEtDiv.style.cursor = "default";
+});
+</script>
 
 <script type="text/javascript" src="./main.70a66962.js"></script>
 
