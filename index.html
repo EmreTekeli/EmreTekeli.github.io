@@ -203,51 +203,72 @@ const photos = [
   }
 
 
-  var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/ai.jpg', './assets/images/enerji.jpg'];
-  var currentImageIndex = 0;
-  var heroSlider = document.getElementById('hero-slider');
-  var heroVideo = document.getElementById('hero-video');
-  var typed = new Typed('#typed', {
+var images = ['./assets/images/gemi.jpeg', './assets/images/tank.jpeg', './assets/images/uzay.jpg', './assets/images/drone.png', './assets/images/icucak.jpeg', './assets/images/ai.jpg', './assets/images/enerji.jpg'];
 
-    typeSpeed: 80,
-    backSpeed: 50,
-    loop: true
-  });
+// Resimlerin önyüklenmesi için bir dizi oluşturun
+var preloadImages = [];
 
-  heroSlider.addEventListener('click', function(event) {
-    if (heroVideo) {
-      heroVideo.parentNode.removeChild(heroVideo);
-      heroVideo = null;
-    }
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    heroSlider.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+// Resimleri yüklemek için yeni bir Image nesnesi oluşturun
+for (var i = 0; i < images.length; i++) {
+  var image = new Image();
+  image.src = images[i];
+  
+  // Resimlerin yüklenip yüklenmediğini kontrol edin
+  image.onload = function() {
+    console.log('Resim yüklendi: ' + this.src);
+  };
+  
+  // Resimleri ön yükleme dizisine ekleyin
+  preloadImages.push(image);
+}
 
-    switch(currentImageIndex) {
-      case 0:
-        typed.strings = ['Deniz Sistemleri'];
-        break;
-      case 1:
-        typed.strings = ['Kara Sistemleri'];
-        break;
-      case 2:
-        typed.strings = ['Uzay Sistemleri'];
-        break;
-      case 3:
-        typed.strings = ['Sürü Drone Sistemleri'];
-        break;
-      case 4:
-        typed.strings = ['Hava Sistemleri'];
-        break;  
-      case 5:
-        typed.strings = ['AI Sistemleri'];
-        break;
-      default:
-        typed.strings = ['Enerji Sistemleri'];
-    }
+var currentImageIndex = 0;
+var heroSlider = document.getElementById('hero-slider');
+var heroVideo = document.getElementById('hero-video');
+var typed = new Typed('#typed', {
+  typeSpeed: 80,
+  backSpeed: 50,
+  loop: true
+});
 
-    typed.reset(); // önceki animasyonu sıfırla
-    typed.start(); // yeni animasyonu başlat
-  });
+heroSlider.addEventListener('click', function(event) {
+  if (heroVideo) {
+    heroVideo.parentNode.removeChild(heroVideo);
+    heroVideo = null;
+  }
+  
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  
+  // Resimlerin önyükleme dizisinden yüklendiğinden emin olun
+  heroSlider.style.backgroundImage = 'url(' + preloadImages[currentImageIndex].src + ')';
+
+  switch(currentImageIndex) {
+    case 0:
+      typed.strings = ['Deniz Sistemleri'];
+      break;
+    case 1:
+      typed.strings = ['Kara Sistemleri'];
+      break;
+    case 2:
+      typed.strings = ['Uzay Sistemleri'];
+      break;
+    case 3:
+      typed.strings = ['Sürü Drone Sistemleri'];
+      break;
+    case 4:
+      typed.strings = ['Hava Sistemleri'];
+      break;  
+    case 5:
+      typed.strings = ['AI Sistemleri'];
+      break;
+    default:
+      typed.strings = ['Enerji Sistemleri'];
+  }
+
+  typed.reset(); // önceki animasyonu sıfırla
+  typed.start(); // yeni animasyonu başlat
+});
+
 </script>
 
 <script>
