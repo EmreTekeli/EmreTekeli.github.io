@@ -4643,7 +4643,7 @@ color: #fff;
 	width:100%;
 }
 #main_slider .main_bg_c.main_bg {
-	background: url(/frontend/img/uzay-sistemleri-bg-min.png) no-repeat;
+	background: url(./uploads/images/uzay-sistemleri-bg-min.png) no-repeat;
 	background-size:contain;
 	background-repeat: repeat-x;
 	top:0;
