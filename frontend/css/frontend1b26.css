@@ -4841,7 +4841,7 @@ color: #fff;
 	top:0;
 	width:20px;
 	height:100%;
-	background:#3f873f;
+	background:#120A8F;
 }
 #home_news .news_grid_header a span {
 	font-size:14px;
@@ -4863,7 +4863,7 @@ color: #fff;
 	transition:all 400ms;
 }
 #home_news .news_grid_header a .header_title {
-	color:#3f873f;
+	color:#120A8F;
 	font-size:24px;
 	font-weight: 400;
 	display: block;
