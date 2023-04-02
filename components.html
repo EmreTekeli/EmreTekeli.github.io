@@ -15,9 +15,49 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
   <link href="./assets/favicon.ico" rel="icon">
 
-  <title>Title page</title>  
+  <title>Neural Defense Technologies</title>  
 
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
+<style>
+
+form {
+  margin-top: 40px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-image: url('https://images.unsplash.com/photo-1553882807-6d25c283a7a8');
+  background-blur: 5px;
+  padding: 20px;
+}
+
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type=text], input[type=tel], input[type=email], textarea {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button[type=submit] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #0062cc;
+}
+
+
+</style>
 
 <body class="minimal">
 <div id="site-border-left"></div>
@@ -53,26 +93,46 @@
   </nav>
 </header>
 <!-- Add your site or app content here -->
-  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/space.jpg')">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="hero-full-wrapper">
-            <div class="text-content">
-              <h1>Hello,<br>
-                <span id="typed-strings">
-                  <span>I'm James Dean</span>
-                  <span>French Designer</span>
-                  <span>Working as a Freelance</span>
-                </span>
-                <span id="typed"></span>
-              </h1>
-            </div>
+<div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/space.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="hero-full-wrapper">
+          <div class="text-content">
+            <br><br><br>
+            <h1>
+              <span id="typed-strings">
+                <span>I'm James Dean</span>
+                <span>Neural Defense Technologies</span>
+              </span>
+              <span id="typed"></span>
+            </h1>
+            <form>
+              <div class="form-group">
+                <label for="adsoyad">Ad Soyad</label>
+                <input type="text" class="form-control" id="adsoyad" name="adsoyad" placeholder="Ad Soyad">
+              </div>
+              <div class="form-group">
+                <label for="telefon">Telefon Numarası</label>
+                <input type="tel" class="form-control" id="telefon" name="telefon" placeholder="Telefon Numarası">
+              </div>
+              <div class="form-group">
+                <label for="mail">E-mail</label>
+                <input type="email" class="form-control" id="mail" name="mail" placeholder="E-mail">
+              </div>
+              <div class="form-group">
+                <label for="mesaj">Mesajınız</label>
+                <textarea class="form-control" id="mesaj" name="mesaj" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
