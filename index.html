@@ -29,6 +29,67 @@ font-family: Roboto Mono,Helvetica,Arial,sans-serif;
 }
 
 
+/* Popup styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Buzlu arkaplan styles */
+.modal::before {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+/* Popup içerik styles */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+  overflow: auto; /* kaydırma çubuklarını göstermek için */
+  max-height: 70vh; /* içerik alanının maksimum yüksekliği */
+}
+
+/* Popup kapatma button styles */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
 </style>
 
 <link rel="shortcut icon" href="assets/images/NeuralDefense.ico" type="image/x-icon" >
@@ -263,7 +324,7 @@ C726.3,723.1,729,725.7,729,728.9z"/>
 				
 				
 					<div class="news_grid_header">
-                        <a href="tr/medya/haberler.html">
+                        <a href="">
                             <span class="header_title">Neural Defense Gündem</span>
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6412 19.991C28.6933 19.9428 28.7324 19.8825 28.7584 19.8223C28.7584 19.8223 28.7584 19.8223 28.7584 19.8103C28.7845 19.75 28.7975 19.6898 28.7975 19.6175C28.7975 19.5452 28.7845 19.485 28.7584 19.4247C28.7584 19.4247 28.7584 19.4247 28.7584 19.4127C28.7324 19.3524 28.6933 19.2922 28.6412 19.244L21.2277 12.3886C21.0062 12.1838 20.6544 12.1838 20.4329 12.3886C20.2114 12.5934 20.2114 12.9187 20.4329 13.1235L26.8823 19.1115L11.9235 19.1115C11.6108 19.1115 11.3633 19.3404 11.3633 19.6295C11.3633 19.9187 11.6108 20.1476 11.9235 20.1476L26.8953 20.1476L20.4329 26.1114C20.2114 26.3163 20.2114 26.6416 20.4329 26.8464C20.6544 27.0512 21.0062 27.0512 21.2277 26.8464L28.6412 19.991Z" fill="#1C1C1B"/>
@@ -272,51 +333,138 @@ C726.3,723.1,729,725.7,729,728.9z"/>
                         </a>
                     </div>
                     <div class="news_grid_cont news_all">
-                                                    <div class="news_item">
-                                <a href="tr/medya/haberler/biriz-beraberiz.html">
-                                                                                                                <span class="item_img" style="background-image:url(uploads/images/haberler/deprem-duyuru/medium/1676015755_roketsan-yardim-3.jpg);"></span>
-                                                                        <span class="item_info">
-                                                                                <span class="item_title">Biriz, beraberiz!</span>
-                                        <span class="item_date">10 Şubat 2023</span>
-                                    </span>
-                                </a>
-                            </div>
-                                                    <div class="news_item">
-                                <a href="tr/medya/haberler/international-armoured-vehicles-iavs-2023-konferansinda-balistik-koruma-cozumlerimizi-tanittik.html">
-                                                                                                                <span class="item_img" style="background-image:url(uploads/images/haberler/bkm-fuar-2023/medium/1674803004_bkm-2023.jpg);"></span>
-                                                                        <span class="item_info">
-                                                                                <span class="item_title">International Armoured Vehicles (IAVs) 2023 Konferansı’nda Balistik Koruma Çözümlerimizi Tanıttık</span>
-                                        <span class="item_date">27 Ocak 2023</span>
-                                    </span>
-                                </a>
-                            </div>
-                                                    <div class="news_item">
-                                <a href="tr/medya/haberler/2022ye-odullerle-veda-ediyoruz.html">
-                                                                                                                <span class="item_img" style="background-image:url(uploads/images/haberler/instagram-duyuru/medium/1672301565_roketsan-yarisma.jpg);"></span>
-                                                                        <span class="item_info">
-                                                                                <span class="item_title">2022’ye Ödüllerle Veda Ediyoruz!</span>
-                                        <span class="item_date">29 Aralık 2022</span>
-                                    </span>
-                                </a>
-                            </div>
-                                                    <div class="news_item">
-                                <a href="tr/medya/haberler/teknofest-havacilik-uzay-ve-teknoloji-festivali-icin-basvurular-basladi.html">
-                                                                                                                <span class="item_img" style="background-image:url(uploads/images/haberler/Teknofest-Duyuru/medium/1667462279_toplu-gorsel-yatay.jpg);"></span>
-                                                                        <span class="item_info">
-                                                                                <span class="item_title">TEKNOFEST Havacılık, Uzay ve Teknoloji Festivali için başvurular başladı.</span>
-                                        <span class="item_date">03 Kasım 2022</span>
-                                    </span>
-                                </a>
-                            </div>
-                                                    <div class="news_item">
-                                <a href="tr/medya/haberler/farkli-sirketlerle-calisarak-olusturdugumuz-3-ayri-fuardaki-stant-tasarimlarimiz-ile-ayri-ayri-odul-almayi-basardik.html">
-                                                                                                                <span class="item_img" style="background-image:url(uploads/images/haberler/stant-oduller/medium/1666616641_stant-odul.jpg);"></span>
-                                                                        <span class="item_info">
-                                                                                <span class="item_title">Farklı Şirketlerle Çalışarak Oluşturduğumuz 3 Ayrı Fuardaki Stant Tasarımlarımız İle Ayrı Ayrı Ödül Almayı Başardık</span>
-                                        <span class="item_date">24 Ekim 2022</span>
-                                    </span>
-                                </a>
-                            </div>
+						<div class="news_item">
+							<a href="#" onclick="openModal(event, 'popup1')">
+								<span class="item_img" style="background-image:url(assets/images/drone.png);"></span>
+								<span class="item_info">
+									<span class="item_title">Neural Defense, Yapay Zeka Destekli İHA'larını Tanıttı</span>
+									<span class="item_date">04 Nisan 2023</span>
+								</span>
+							</a>
+						</div>
+						<div id="popup1" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close1" onclick="closeModal('popup1')">&times;</span>
+								<img src="assets/images/drone.png" alt="">
+								<p>Neural Defense'in geliştirdiği yapay zeka destekli insansız hava araçları, son dönemde savunma sanayisi alanında büyük bir ilgi uyandırdı. Bu İHA'lar, yapay zeka algoritmaları sayesinde hedefleri tanımlayarak takip edebiliyor ve vurma konusunda oldukça etkili bir şekilde kullanılabiliyor.
+
+									Bu İHA'lar, operatörler tarafından uzaktan kontrol edilebiliyor ve savaş sırasında insan hayatını koruyor. Operatörler, bu İHA'ları birkaç kilometre uzaktan kontrol edebiliyor ve hedefleri tespit etme, takip etme ve hasar verme konusunda oldukça hassas bir kontrol sağlayabiliyor.
+									
+									Neural Defense'in geliştirdiği bu teknolojiler, savaş sırasında insan hayatını korumak ve sivil kayıpları en aza indirmek açısından oldukça önemli bir rol oynuyor. Bu İHA'lar, düşük maliyetli ve daha az riskli bir alternatif olarak da savunma sanayisinde kullanılıyor.
+									
+									Neural Defense'in bu İHA'larının özellikleri arasında, düşük radar kesitleri, yüksek manevra kabiliyetleri ve gece görüşü yetenekleri yer alıyor. Ayrıca, bu İHA'lar, her türlü hava koşulunda çalışabiliyor ve uzun süre havada kalabilme özellikleri sayesinde de daha etkili bir şekilde kullanılabiliyor.
+									
+									Neural Defense'in bu İHA'larının kullanım alanları arasında, keşif ve gözetleme, saldırı, koruma ve kurtarma görevleri yer alıyor. Bu İHA'lar, özellikle çatışma bölgelerinde, afet bölgelerinde ve terörle mücadele operasyonlarında sıkça kullanılıyor.
+									
+									Sonuç olarak, Neural Defense'in geliştirdiği yapay zeka destekli insansız hava araçları, savunma sanayisi alanında önemli bir yer edinmeye devam ediyor. Bu teknolojiler, savaş sırasında insan hayatını korumak ve düşük maliyetli alternatifler sunmak açısından oldukça önemli bir rol oynuyor.</p>
+							</div>
+						</div>
+						
+							
+						<div class="news_item">
+							<a href="#" onclick="openModal(event, 'popup2')">
+								<span class="item_img" style="background-image:url(assets/images/enerji.jpg);"></span>
+								<span class="item_info">
+									<span class="item_title">Neural Defense, Yenilenebilir Enerji Depolama Sistemi Geliştirdi</span>
+									<span class="item_date">04 Nisan 2023</span>
+								</span>
+							</a>
+						</div>
+						<div id="popup2" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close2" onclick="closeModal('popup2')">&times;</span>
+								<img src="assets/images/enerji.jpg" alt="">
+								<p>Neural Defense, yenilenebilir enerji kaynaklarından elde edilen enerjinin daha verimli bir şekilde kullanılmasına olanak tanıyan yeni bir pil teknolojisi geliştirdiğini duyurdu. Bu teknoloji, daha uzun süreli depolama sağlayarak enerji kaynaklarının daha verimli bir şekilde kullanılmasını mümkün kılıyor.
+
+									Geleneksel pillerin aksine, bu yeni pil teknolojisi, çevreye zararlı kimyasal maddeler içermez ve yenilenebilir enerji kaynaklarının daha sık kullanılabilmesine imkan verir. Bu sayede, enerji tüketimindeki artışa bağlı olarak karbon emisyonlarının azaltılması hedefine de katkı sağlanıyor.
+									
+									Ayrıca, bu yeni pil teknolojisi, güvenli bir şekilde taşınabilir ve depolanabilir olması sayesinde, askeri üsler, hastaneler ve diğer kritik altyapılar gibi güç kaybının kritik olduğu yerlerde kullanılabilir.
+									
+									Neural Defense aynı zamanda uzay savunması konusunda da çalışmalarını arttırdığını açıkladı. Bu kapsamda, uydu teknolojileri ve uzayda yürütülen faaliyetler için geliştirilen yeni savunma sistemleri ve silahlar üzerinde çalışılıyor.
+									
+									Uzayda hızla gelişen teknolojiler, birçok ülkenin uzayda askeri faaliyetler yürütmeye başlamasıyla birlikte güvenlik risklerini de beraberinde getiriyor. Bu nedenle, uzayda güvenliği sağlamak için geliştirilen yeni teknolojiler, önem kazanıyor.
+									
+									Neural Defense'in uzay savunması konusunda yürüttüğü çalışmalar, ülke savunması açısından son derece önemli. Bu çalışmaların, yalnızca askeri amaçlarla değil, aynı zamanda sivil amaçlarla da kullanılabilecek teknolojilerin geliştirilmesine katkı sağlaması bekleniyor.
+									
+									Sonuç olarak, Neural Defense, yenilenebilir enerji kaynaklarının daha verimli bir şekilde kullanılmasına olanak tanıyan yeni bir pil teknolojisi geliştirdiğini duyurdu. Ayrıca, uzay savunması konusunda yürüttüğü çalışmalarla da ülke savunması açısından önemli bir rol oynuyor. Bu çalışmaların, hem askeri hem de sivil amaçlarla kullanılabilecek teknolojilerin geliştirilmesine katkı sağlaması bekleniyor.</p>
+							</div>
+						</div>
+						
+						<div class="news_item">
+							<a href="#" onclick="openModal(event, 'popup3')">
+								<span class="item_img" style="background-image:url(assets/images/uzay.jpg);"></span>
+								<span class="item_info">
+									<span class="item_title">Neural Defense, Uzay Savunması Konusunda Çalışmalarını Arttırdı</span>
+									<span class="item_date">04 Mart 2022</span>
+								</span>
+							</a>
+						</div>
+						<div id="popup3" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close1" onclick="closeModal('popup3')">&times;</span>
+								<img src="assets/images/uzay.jpg" alt="">
+								<p>Neural Defense, yenilenebilir enerji kaynaklarından elde edilen enerjinin daha verimli bir şekilde kullanılmasına olanak tanıyan yeni bir pil teknolojisi geliştirdiğini açıkladı. Bu teknoloji, geleneksel pillerin aksine, çevreye zararlı kimyasal maddeler içermiyor ve yenilenebilir enerji kaynaklarının daha sık kullanılabilmesine imkan sağlıyor.
+
+									Neural Defense CEO'su Jane Lee, konuyla ilgili yaptığı açıklamada, "Yenilenebilir enerji kaynaklarının kullanımı, enerji verimliliğini arttırmak ve karbon ayak izimizi azaltmak için önemli bir adımdır. Ancak, yenilenebilir enerjinin mevcudiyeti, enerjinin verimli bir şekilde depolanmasını zorlaştırmaktadır. Bu nedenle, Neural Defense olarak, yenilenebilir enerji kaynaklarının daha verimli bir şekilde kullanılabilmesi için yeni bir pil teknolojisi geliştirdik" dedi.
+									
+									Bu yeni pil teknolojisi, güvenli bir şekilde taşınabilir ve depolanabilir olması sayesinde, askeri üsler, hastaneler ve diğer kritik altyapılar gibi güç kaybının kritik olduğu yerlerde kullanılabilir. Ayrıca, enerji tüketimindeki artışa bağlı olarak karbon emisyonlarının azaltılması hedefine de katkı sağlar.
+									
+									Neural Defense ayrıca uzay savunması konusunda yürüttüğü çalışmaları da arttırdığını duyurdu. Uydu teknolojileri ve uzayda yürütülen faaliyetler için geliştirilen yeni savunma sistemleri ve silahlar üzerinde çalışıyorlar.
+									
+									Uzayda hızla gelişen teknolojiler, birçok ülkenin uzayda askeri faaliyetler yürütmeye başlamasıyla birlikte güvenlik risklerini de beraberinde getiriyor. Bu nedenle, uzayda güvenliği sağlamak için geliştirilen yeni teknolojiler, önem kazanıyor.
+									
+									Neural Defense'in uzay savunması konusunda yürüttüğü çalışmalar, ülke savunması açısından son derece önemli. Bu çalışmaların, yalnızca askeri amaçlarla değil, aynı zamanda sivil amaçlarla da kullanılabilecek teknolojilerin geliştirilmesine katkı sağlaması bekleniyor.</p>
+							</div>
+						</div>
+						
+						<div class="news_item">
+							<a href="#" onclick="openModal(event, 'popup4')">
+								<span class="item_img" style="background-image:url(assets/images/yerlesim.png);"></span>
+								<span class="item_info">
+									<span class="item_title">Neural Defense, köklerine bağlı kalarak uzayda yerleşim konusunda önemli bir adım attı</span>
+									<span class="item_date">10 Kasım 2023</span>
+								</span>
+							</a>
+						</div>
+						<div id="popup4" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close1" onclick="closeModal('popup4')">&times;</span>
+								<img src="assets/images/yerlesim.png" alt="">
+								<p>Neural Defense, köklerine bağlı kalarak uzayda yerleşim konusunda önemli bir adım attı. Şirket, uzun vadeli bir proje kapsamında, insanların uzayda yaşamasına olanak tanıyacak bir uzay kolonisi geliştirmeyi planlıyor.
+
+									Uzayda yerleşim konusu, son yıllarda giderek daha fazla önem kazanıyor. Bu konuda yapılan çalışmalar, insanlığın uzayda kalıcı bir şekilde yaşayabilmesi için önemli bir adım olarak kabul ediliyor. Bu nedenle, Neural Defense gibi savunma sanayisi konusunda uzmanlaşmış şirketlerin de bu alanda çalışmalar yapması oldukça önemli bir gelişme olarak değerlendiriliyor.
+									
+									Neural Defense'in uzay kolonisi projesi, uzun vadeli bir hedef olarak belirlendi. Bu proje kapsamında, insanların uzayda yaşayabilmesi için gerekli olan tüm altyapının geliştirilmesi planlanıyor. Bu altyapı, yaşam alanlarından, tarım sistemlerine kadar birçok farklı unsuru içerecek.
+									
+									Uzay kolonisi projesi, Neural Defense'in köklerine bağlı kalma felsefesiyle de uyumlu bir şekilde geliştiriliyor. Şirket, uzayda yaşamı sadece bir hedef olarak değil, insanlığın geleceği için bir zorunluluk olarak görüyor. Bu nedenle, uzayda yerleşim konusunda yapılan çalışmalar, Neural Defense'in savunma sanayisi alanındaki başarılarına da yeni bir boyut kazandırıyor.
+									
+									Neural Defense'in uzay kolonisi projesi, gelecekteki gelişmeler açısından oldukça umut verici bir adım olarak değerlendiriliyor. Uzayda yaşamın mümkün olması için gerekli olan tüm teknolojilerin geliştirilmesi, insanlığın geleceği için önemli bir adım olacak. Neural Defense'in bu alanda yaptığı çalışmalar, bu hedefe ulaşmada önemli bir rol oynayabilir.</p>
+							</div>
+						</div>
+						
+						  <div class="news_item">
+							<a href="#" onclick="openModal(event, 'popup5')">
+								<span class="item_img" style="background-image:url(assets/images/ai.jpg);"></span>
+								<span class="item_info">
+									<span class="item_title">Neural Defense, Yapay Zeka Konusunda Yeni Bir Keşif Yaptı</span>
+									<span class="item_date">30 Ağustos 2023</span>
+								</span>
+							</a>
+						</div>
+						<div id="popup5" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close1" onclick="closeModal('popup5')">&times;</span>
+								<img src="assets/images/ai.jpg" alt="">
+								<p>Neural Defense, yapay zeka konusundaki çalışmalarına bir yenisini daha ekledi. Şirket, yapay zeka algoritmalarını daha verimli bir şekilde kullanmak için yeni bir yöntem geliştirdi. Bu yöntem, yapay zeka algoritmalarının daha hızlı ve daha doğru bir şekilde çalışmasına olanak tanıyor.
+
+									Yapay zeka teknolojisi, son yıllarda hızla gelişen bir alan ve savunma sanayinde de yaygın bir şekilde kullanılıyor. Ancak, bu teknolojinin en önemli sorunlarından biri, algoritmaların yavaş ve yanıltıcı sonuçlar vermesi. Neural Defense'in geliştirdiği yeni yöntem ise, bu sorunu ortadan kaldırarak, yapay zeka algoritmalarının daha hızlı ve daha doğru bir şekilde çalışmasına imkan sağlıyor.
+									
+									Bu yeni yöntem, yapay zeka teknolojisiyle ilgili araştırmalara da önemli bir katkı sağlayabilir. Yapay zeka teknolojisinin gelecekteki kullanım alanları, özellikle savunma sanayisinde, oldukça geniş bir yelpazeye sahip olacak. Neural Defense'in geliştirdiği bu yöntem, bu alandaki araştırmaların daha verimli ve başarılı bir şekilde yapılmasına da yardımcı olabilir.
+									
+									Neural Defense'in yapay zeka konusundaki başarıları, şirketin savunma sanayisindeki lider konumunu daha da güçlendiriyor ve gelecekteki gelişmeler için de umut verici bir tablo çiziyor.</p>
+							</div>
+						</div>
+						
                                             </div>
                                         
             
@@ -670,6 +818,65 @@ C726.3,723.1,729,725.7,729,728.9z"/>
 
 
 <script type="text/javascript" src="./main.70a66962.js"></script>
+
+<script>
+function openModal(event, popupId) {
+  event.preventDefault();
+  var modal = document.getElementById(popupId);
+  modal.style.display = "block";
+}
+
+function closeModal(popupId) {
+  var modal = document.getElementById(popupId);
+  modal.style.display = "none";
+}
+
+var span1 = document.getElementById("close1");
+span1.onclick = function() {
+  closeModal("popup1");
+}
+
+var span2 = document.getElementById("close2");
+span2.onclick = function() {
+  closeModal("popup2");
+}
+
+var span3 = document.getElementById("close3");
+span3.onclick = function() {
+  closeModal("popup3");
+}
+
+var span4 = document.getElementById("close4");
+span4.onclick = function() {
+  closeModal("popup4");
+}
+
+var span5 = document.getElementById("close5");
+span5.onclick = function() {
+  closeModal("popup5");
+}
+
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById("popup1")) {
+    closeModal("popup1");
+  }
+  if (event.target == document.getElementById("popup2")) {
+    closeModal("popup2");
+  }
+  if (event.target == document.getElementById("popup3")) {
+    closeModal("popup3");
+  }
+  if (event.target == document.getElementById("popup4")) {
+    closeModal("popup4");
+  }
+  if (event.target == document.getElementById("popup5")) {
+    closeModal("popup5");
+  }
+}
+
+
+  </script>
 
 </body>
 </html>
