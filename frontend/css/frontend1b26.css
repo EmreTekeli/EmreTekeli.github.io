@@ -4921,7 +4921,7 @@ color: #fff;
 	opacity: 1;
 }
 #home_news .news_grid_cont .news_item a:hover .item_info {
-	background-color: rgba(63, 135, 63,.8);
+	background-color: rgba(13, 0, 255, 0.4);
 }
 #home_news .news_grid_cont .news_item a:hover .item_title {
 	color:#fff;
