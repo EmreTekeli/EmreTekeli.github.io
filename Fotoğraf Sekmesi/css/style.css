@@ -1,103 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #e5e5e5;
 }
 
-#main {
-  position: relative;
-  z-index: 20;
+.gallery {
+  width: 640px;
+  margin: 0 auto;
+  padding: 5px;
   background: #fff;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
-  min-height: 100vh;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  margin-top: 10%;
 }
 
-@media (min-width: 640px) {
-  #main {
-    padding: 1em;
-  }
-}
-
-.fake-section {
-  background: #eee;
-  height: 300px;
-}
-
-.tiles-a {
-  width: 100%;
+.gallery > div {
   position: relative;
-  overflow: hidden;
+  float: left;
+  padding: 5px;
 }
-.tiles-a ul {
-  margin: 0;
-  padding: 0;
-}
-.tiles-a li {
-  list-style: none;
-}
-@media (min-width: 640px) {
-  .tiles-a li {
-    float: left;
-    width: 33.33%;
-  }
-}
-.tiles-a a {
-  margin: 1em;
+
+.gallery > div > img {
   display: block;
-  background: #222;
-  padding-top: 73%;
-  height: 0;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
 }
 
-#aside {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 60%;
-  height: 100%;
-  z-index: 10;
-}
-#aside img {
-  width: 100%;
-  height: auto;
-  vertical-align: top;
-}
-#aside .wrapper {
-  padding: 1em;
-}
-#aside .close {
-  width: 25px;
-  display: block;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+.gallery > div:hover {
+  z-index: 1;
 }
 
-.show-detail {
-  overflow: hidden;
-}
-.show-detail #main {
-  -webkit-transform: translateX(-60%);
-          transform: translateX(-60%);
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
 }
