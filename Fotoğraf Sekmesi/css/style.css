@@ -9,7 +9,7 @@
 body {
   font: 14px/1 'Open Sans', sans-serif;
   color: #555;
-  background: #e5e5e5;
+  background: #11001a;
 }
 
 .gallery {
@@ -42,6 +42,12 @@ body {
   transform: scale(1.7,1.7);
   transition: .3s transform;
 }
+.gallery img {
+  width: 300px;
+  height: 200px; /* ya da başka bir yükseklik değeri */
+  object-fit: cover;
+}
+
 
 .cf:before, .cf:after {
   display: table;
