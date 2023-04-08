@@ -25,6 +25,24 @@
   body::-webkit-scrollbar {
       display: none;
   }
+
+  header {
+  position: fixed;
+  top: -10;
+  width: 100%;
+  transition: top 0.3s;
+}
+
+header.hide {
+  top: -130px;
+  display: none;
+}
+
+header.show {
+  top: 0;
+  display: block;
+}
+
   </style></head>
 
 <body>
@@ -113,12 +131,12 @@
 	</div>
   </div>
 
-
+<br><br>
 <footer class="footer-container text-center">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p>© 2023 | Neural Defense Technologies </p>
+        <p style="color: white;">© 2023 | Neural Defense Technologies </p>
       </div>
     </div>
   </div>
@@ -145,6 +163,26 @@
   ga('send', 'pageview');
 </script>
 
---> <script type="text/javascript" src="./main.70a66962.js"></script></body>
+--> <script type="text/javascript" src="./main.70a66962.js"></script>
+<script>
+var header = document.querySelector('header');
+var lastScrollY = 0;
+
+window.addEventListener('scroll', function() {
+  var currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY) {
+    header.classList.add('hide');
+    header.classList.remove('show');
+  } else {
+    header.classList.add('show');
+    header.classList.remove('hide');
+  }
+
+  lastScrollY = currentScrollY;
+});
+
+</script>
+</body>
 
 </html>
