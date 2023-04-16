@@ -131,7 +131,6 @@ font-family: Roboto Mono,Helvetica,Arial,sans-serif;
   z-index: 9999;
 }
 
-
 #loading-screen .content {
   position: absolute;
   top: 50%;
@@ -165,14 +164,21 @@ font-family: Roboto Mono,Helvetica,Arial,sans-serif;
   }
 }
 
+.hidden {
+  display: none;
+}
+
+
+
 
 
 </style>
 <script>
-	window.addEventListener('load', function () {
+window.addEventListener('load', function () {
   const loader = document.querySelector('#loading-screen');
-  loader.className += ' hidden';
+  loader.classList.add('hidden');
 });
+
 
 </script>
 
