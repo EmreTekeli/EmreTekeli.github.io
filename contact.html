@@ -24,6 +24,120 @@
       display: none;
   }
   
+
+
+/* Form alanları */
+.ts-form input,
+.ts-form select,
+.ts-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.ts-form input:focus,
+.ts-form select:focus,
+.ts-form textarea:focus {
+  border-color: #007bff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.ts-form select {
+  height: 40px;
+  padding: 6px 12px;
+}
+
+/* Gönder butonu */
+.ts-form button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.15s, border-color ease-in-out 0.15s;
+}
+
+.ts-form button[type="submit"]:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* Radyo butonları */
+.ts-form label.radio {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.ts-form input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ts-form input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ts-form input[type="radio"]:checked + label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Hobi seçimi */
+.ts-form select[multiple] {
+  height: auto;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Form durum mesajları */
+.ts-form .form-contact-status {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.ts-form .form-contact-status.success {
+  color: #28a745;
+}
+.ts-form .form-contact-status.error {
+  color: #dc3545;
+}
+
+
+
+
+
   </style></head>
 
 <body class="">
@@ -69,28 +183,54 @@
           
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <form id="form-contact" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr" class="clearfix ts-form ts-form-email" >
+              <form id="form-contact" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr" class="clearfix ts-form ts-form-email">
                 <h4 class="mb-4">Bize Yazın</h4>
                 <div class="form-row">
-                    <div class="form-group col-sm-4">
-                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Ad - Soyad" required>
+                  <div class="form-group col-sm-4">
+                    <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Ad - Soyad" required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <input type="text" class="form-control text-white rounded-0 bg-transparent" name="phone" placeholder="Telefon Numaranız">
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="gender">Cinsiyet</label>
+                    <div>
+                      <input type="radio" id="gender-erkek" name="gender" value="erkek" required>
+                      <label for="gender-erkek">Erkek</label>
                     </div>
-                    <div class="form-group col-sm-4">
-                        <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
+                    <div>
+                      <input type="radio" id="gender-kadin" name="gender" value="kadin">
+                      <label for="gender-kadin">Kadın</label>
                     </div>
-                    <div class="form-group col-sm-4">
-                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Numaranız" required>
+                    <div>
+                      <input type="radio" id="gender-diger" name="gender" value="diger">
+                      <label for="gender-diger">Diğer</label>
                     </div>
-                    <div class="form-group col-12">
-                        <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
-
-                    </div>
-                    <div class="form-group col-12 mb-0">
-                        <button type="submit" class="btn btn-primary rounded w-md mt-3">Gönder</button>
-                    </div>
-                    <div class="form-contact-status"></div>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="hobiler">Hobiler</label>
+                    <select class="form-control" id="hobiler" name="hobiler[]" multiple>
+                      <option value="yuzme">Yüzme</option>
+                      <option value="kosu">Koşu</option>
+                      <option value="kitap-okuma">Kitap Okuma</option>
+                      <option value="yemek-yapma">Yemek Yapma</option>
+                      <option value="muzik-dinleme">Müzik Dinleme</option>
+                      <option value="resim-cizme">Resim Çizme</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-12">
+                    <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
+                  </div>
+                  <div class="form-group col-12 mb-0">
+                    <button type="submit" class="btn btn-primary rounded w-md mt-3">Gönder</button>
+                  </div>
+                  <div class="form-contact-status"></div>
                 </div>
-            </form>
+              </form>
+              
                     
                     <div class="col-md-5 address-container">
                       <ul class="list-unstyled">
