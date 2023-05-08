@@ -210,33 +210,16 @@
                     </div>
                   </div>
                   <div class="form-group col-sm-4">
-                    <label>Hobiler</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="yuzme" id="hobi-yuzme" name="hobiler">
-                      <label class="form-check-label" for="hobi-yuzme">Yüzme</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="kosu" id="hobi-kosu" name="hobiler">
-                      <label class="form-check-label" for="hobi-kosu">Koşu</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="kitap-okuma" id="hobi-kitap-okuma" name="hobiler">
-                      <label class="form-check-label" for="hobi-kitap-okuma">Kitap Okuma</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="yemek-yapma" id="hobi-yemek-yapma" name="hobiler">
-                      <label class="form-check-label" for="hobi-yemek-yapma">Yemek Yapma</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="muzik-dinleme" id="hobi-muzik-dinleme" name="hobiler">
-                      <label class="form-check-label" for="hobi-muzik-dinleme">Müzik Dinleme</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="resim-cizme" id="hobi-resim-cizme" name="hobiler">
-                      <label class="form-check-label" for="hobi-resim-cizme">Resim Çizme</label>
-                    </div>
+                    <label for="hobiler">Hobiler</label>
+                    <select class="form-control" id="hobiler" name="hobiler" multiple>
+                      <option value="yuzme">Yüzme</option>
+                      <option value="kosu">Koşu</option>
+                      <option value="kitap-okuma">Kitap Okuma</option>
+                      <option value="yemek-yapma">Yemek Yapma</option>
+                      <option value="muzik-dinleme">Müzik Dinleme</option>
+                      <option value="resim-cizme">Resim Çizme</option>
+                    </select>
                   </div>
-                  
                   <div class="form-group col-12">
                     <textarea name="message" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
                   </div>
