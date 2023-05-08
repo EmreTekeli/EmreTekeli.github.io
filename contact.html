@@ -72,7 +72,7 @@
                <form action="" class="reveal-content">
                   <div class="row">
                     <div class="col-md-7">
-                      <form id="myForm" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr">
+                      <form id="myForm">
                         <div class="form-group">
                           <label for="name">İsim</label>
                           <input type="text" class="form-control" id="name" name="name" placeholder="İsminizi Girin" required>
@@ -122,39 +122,6 @@
                         <button type="submit" class="btn btn-primary">Gönder</button>
                       </form>
 
-                      
-                      <script>
-                        // form submit işlemi sonrasında çalışacak olan fonksiyon
-                        function handleSubmit(event) {
-                          event.preventDefault(); // varsayılan form submit işlemi iptal ediliyor
-                          const form = event.target; // form elementi alınıyor
-                          const formData = new FormData(form); // form verileri FormData nesnesi olarak alınıyor
-
-                          // form submit işlemi için XMLHttpRequest nesnesi oluşturuluyor
-                          const xhr = new XMLHttpRequest();
-                          xhr.open(form.method, form.action);
-                          xhr.setRequestHeader('Accept', 'application/json');
-                          xhr.onreadystatechange = function() {
-                            if (xhr.readyState !== XMLHttpRequest.DONE) return;
-
-                            // form submit işlemi başarılı bir şekilde tamamlandıysa
-                            if (xhr.status === 200) {
-                              // formun kaydedildiğine dair bir bildirim mesajı gösteriliyor
-                              form.reset();
-                              alert('Formunuz başarıyla gönderildi! Teşekkür ederiz.');
-                            } else {
-                              // form submit işlemi başarısız olduysa
-                              alert('Form gönderilemedi. Lütfen tekrar deneyin.');
-                            }
-                          };
-                          xhr.send(formData); // form verileri gönderiliyor
-                        }
-
-                        // form elementine submit event listener'ı ekleniyor
-                        const form = document.getElementById('myForm');
-                        form.addEventListener('submit', handleSubmit);
-
-                                              </script>
                       
                       
                       <script>
