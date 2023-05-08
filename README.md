@@ -1,1 +1,1 @@
-Sadece okul projesi için kullanılmaktadır.
+# Sadece okul projesi için kullanılmaktadır.
