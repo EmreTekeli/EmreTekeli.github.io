@@ -69,56 +69,28 @@
           
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-               <form id="form-contact" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr" class="reveal-content">
-                  <div class="row">
-                    <div class="col-md-7">
-                        <div class="form-group">
-                          <label for="name">İsim</label>
-                          <input type="text" class="form-control" id="name" name="name" placeholder="İsminizi Girin" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresinizi Girin" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="phone">Telefon Numarası</label>
-                          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon Numaranızı Girin">
-                        </div>
-                        <div class="form-group">
-                          <label for="gender">Cinsiyet</label>
-                          <div>
-                            <input type="radio" id="gender-erkek" name="gender" value="erkek" required>
-                            <label for="gender-erkek">Erkek</label>
-                          </div>
-                          <div>
-                            <input type="radio" id="gender-kadin" name="gender" value="kadin">
-                            <label for="gender-kadin">Kadın</label>
-                          </div>
-                          <div>
-                            <input type="radio" id="gender-diger" name="gender" value="diger">
-                            <label for="gender-diger">Diğer</label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="hobiler">Hobiler</label>
-                          <select class="form-control" id="hobiler" name="hobiler[]" multiple>
-                            <option value="yuzme">Yüzme</option>
-                            <option value="kosu">Koşu</option>
-                            <option value="kitap-okuma">Kitap Okuma</option>
-                            <option value="yemek-yapma">Yemek Yapma</option>
-                            <option value="muzik-dinleme">Müzik Dinleme</option>
-                            <option value="resim-cizme">Resim Çizme</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="subject">Konu</label>
-                          <input type="text" class="form-control" id="subject" name="subject" placeholder="Konuyu Girin" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="message">Mesajınız</label>
-                          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Mesajınızı Girin" required></textarea>
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-primary">Gönder</button>
+              <form id="form-contact" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr" class="clearfix ts-form ts-form-email" >
+                <h4 class="mb-4">Bize Yazın</h4>
+                <div class="form-row">
+                    <div class="form-group col-sm-4">
+                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Ad - Soyad" required>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Numaranız" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
+
+                    </div>
+                    <div class="form-group col-12 mb-0">
+                        <button type="submit" class="btn btn-primary rounded w-md mt-3">Gönder</button>
+                    </div>
+                    <div class="form-contact-status"></div>
+                </div>
+            </form>
                     
                     <div class="col-md-5 address-container">
                       <ul class="list-unstyled">
@@ -154,7 +126,7 @@
 
                     </div>
                   </div>
-                </form>
+                
             </div>
 
           </div>
