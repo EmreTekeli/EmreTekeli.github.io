@@ -131,7 +131,7 @@
   color: #28a745;
 }
 .ts-form .form-contact-status.error {
-  color: #dc3545;
+  color:#dc3545;
 }
 
 
@@ -185,25 +185,51 @@
               <form id="form-contact" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr" class="clearfix ts-form ts-form-email">
                 <h4 class="mb-4">Bize Yazın</h4>
                 <div class="form-row">
-                    <div class="form-group col-sm-4">
-                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Ad - Soyad" required>
+                  <div class="form-group col-sm-4">
+                    <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Ad - Soyad" required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Numaranız" required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="gender">Cinsiyet</label>
+                    <div>
+                      <input type="radio" id="gender-erkek" name="gender" value="erkek" required>
+                      <label for="gender-erkek">Erkek</label>
                     </div>
-                    <div class="form-group col-sm-4">
-                        <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
+                    <div>
+                      <input type="radio" id="gender-kadin" name="gender" value="kadin">
+                      <label for="gender-kadin">Kadın</label>
                     </div>
-                    <div class="form-group col-sm-4">
-                        <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Numaranız" required>
+                    <div>
+                      <input type="radio" id="gender-diger" name="gender" value="diger">
+                      <label for="gender-diger">Diğer</label>
                     </div>
-                    <div class="form-group col-12">
-                        <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
-
-                    </div>
-                    <div class="form-group col-12 mb-0">
-                        <button type="submit" class="btn btn-primary rounded w-md mt-3">Gönder</button>
-                    </div>
-                    <div class="form-contact-status"></div>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="hobiler">Hobiler</label>
+                    <select class="form-control" id="hobiler" name="hobiler[]" multiple>
+                      <option value="yuzme">Yüzme</option>
+                      <option value="kosu">Koşu</option>
+                      <option value="kitap-okuma">Kitap Okuma</option>
+                      <option value="yemek-yapma">Yemek Yapma</option>
+                      <option value="muzik-dinleme">Müzik Dinleme</option>
+                      <option value="resim-cizme">Resim Çizme</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-12">
+                    <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mesajınız" required></textarea>
+                  </div>
+                  <div class="form-group col-12 mb-0">
+                    <button type="submit" class="btn btn-primary rounded w-md mt-3">Gönder</button>
+                  </div>
+                  <div class="form-contact-status"></div>
                 </div>
-            </form>
+              </form>
+              
                     
                     <div class="col-md-5 address-container">
                       <ul class="list-unstyled">
