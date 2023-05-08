@@ -72,7 +72,7 @@
                <form action="" class="reveal-content">
                   <div class="row">
                     <div class="col-md-7">
-                      <form id="myForm">
+                      <form id="myForm" method="post" action="https://formsubmit.co/tekeliemre@outlook.com.tr">
                         <div class="form-group">
                           <label for="name">İsim</label>
                           <input type="text" class="form-control" id="name" name="name" placeholder="İsminizi Girin" required>
@@ -119,31 +119,9 @@
                           <label for="message">Mesajınız</label>
                           <textarea class="form-control" id="message" name="message" rows="5" placeholder="Mesajınızı Girin" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Gönder</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Gönder</button>
                       </form>
-
-                      
-                      
-                      <script>
-                        function getSelectedHobbies() {
-                          var selectedHobbies = [];
-                          var selectBox = document.getElementById("hobiler");
-                          for (var i = 0; i < selectBox.options.length; i++) {
-                            if (selectBox.options[i].selected) {
-                              selectedHobbies.push(selectBox.options[i].value);
-                            }
-                          }
-                          return selectedHobbies;
-                        }
-                      
-                        document.getElementById("myForm").addEventListener("submit", function(event) {
-                          var selectedHobbies = getSelectedHobbies();
-                          alert("Seçilen hobiler: " + selectedHobbies.join(", "));
-                          event.preventDefault();
-                        });
-                      </script>
                     
-                      
                     <div class="col-md-5 address-container">
                       <ul class="list-unstyled">
                         <li>
